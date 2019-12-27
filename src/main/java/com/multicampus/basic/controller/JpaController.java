@@ -27,4 +27,9 @@ public class JpaController {
 		productRepository.save(product);
 		return "redirect:/jpa/product";
 	}
+	@GetMapping("/jpa/product2")
+	public List<Product> product2(String name) {
+		List<Product> list = productRepository.findByName(name);
+		return list;
+	}
 }
